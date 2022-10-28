@@ -1,0 +1,20 @@
+.summary-box{
+    background-color: rgb(60, 57, 57);
+    color: aliceblue;
+    max-width: 100%;
+    
+
+    width: auto;
+    border-radius: 10px;
+    padding: 0.75rem 4rem;
+    
+    left: 20%;
+    right: 17%;
+    text-align: center;
+    position: fixed;
+    
+}
+.summary-head.h1{
+    
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
