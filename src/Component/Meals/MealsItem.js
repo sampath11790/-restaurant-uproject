@@ -1,6 +1,6 @@
 import React from "react";
 import classes from './MealsItem.module.css'
-import Form from "../Form/Form";
+import Form from "../UI/Form/Form";
 
 
 const MealsItem=(props)=>{

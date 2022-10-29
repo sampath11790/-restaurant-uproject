@@ -2,6 +2,7 @@ import React from "react";
 import Header from "./Component/Layout/Header";
 import Summary from "./Component/Summary/Summary";
 import Meals from "./Component/Meals/Meals";
+import Cart from "./Component/Cart/Cart";
 const mealsArray=[
     
   {id:1,name:'Suchi',discription:"Fineest fidh and veggies",price:22.99},
@@ -11,13 +12,18 @@ const mealsArray=[
 ]
 function App() {
   return (
+    
     <React.Fragment>
+     <div>
+     
+     </div>
       <Header></Header>
      
       <div>
+      
       <Meals meals={mealsArray}/>
       </div>
-      
+      <Cart></Cart>
     </React.Fragment>
   );
 }
