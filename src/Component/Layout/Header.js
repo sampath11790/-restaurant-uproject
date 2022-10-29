@@ -3,14 +3,21 @@ import Mealsphoto from '../../assets/meals.jpg'
 import classes from './Header.module.css'
 import HeaderCartButton from "./HeaderCartButton";
 import Summary from "../Summary/Summary";
-import Cart from "../Cart/Cart";
-const Header=()=>{
-    console.log(Cart)
+
+
+const Header=(props)=>{
+      const onCartHandler=()=>{
+       
+        console.log('header cart handler')
+        props.addCartStatus() 
+      }
+    
+    //console.log(Cart)
     return(
          <Fragment>
         <header className={classes.header}>
             <h1>Meals List</h1>
-            <HeaderCartButton></HeaderCartButton>
+            <HeaderCartButton onCart={onCartHandler}></HeaderCartButton>
             
         </header>
       

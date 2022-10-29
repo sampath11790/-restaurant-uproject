@@ -2,7 +2,7 @@ import React from "react";
 import classes from './Cart.module.css'
 import Button from "../UI/Button/Button";
 import  ReactDOM  from 'react-dom'
-const Cart=()=>{
+const Cart=(props)=>{
 return(
 
   
@@ -12,8 +12,9 @@ return(
        <h1>Amount</h1>
        <h1>22.36</h1>
        <div className={classes.btn}>
-       <Button name='order' type='button'></Button>
-       <Button  name='cancel' type='button'></Button>
+       <Button  name='cancel' type='button' onClick={props.onCart}></Button>
+       <Button name='order' type='button' ></Button>
+       
        </div>
       </div>
         ,document.getElementById('cart'))}

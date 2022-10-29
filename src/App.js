@@ -1,6 +1,6 @@
-import React from "react";
+import React,{useState} from "react";
 import Header from "./Component/Layout/Header";
-import Summary from "./Component/Summary/Summary";
+
 import Meals from "./Component/Meals/Meals";
 import Cart from "./Component/Cart/Cart";
 const mealsArray=[
@@ -11,19 +11,19 @@ const mealsArray=[
   {id:4,name:'Green Bowl',discription:"Healthy...and green ",price:18.85}
 ]
 function App() {
+  const [cartStatus,setCartStatus]=useState(false)
+  const cartHandler=()=>{
+    setCartStatus(!cartStatus)
+    console.log('setcart')
+  }
+ 
+
   return (
     
     <React.Fragment>
-     <div>
-     
-     </div>
-      <Header></Header>
-     
-      <div>
-      
-      <Meals meals={mealsArray}/>
-      </div>
-      <Cart></Cart>
+     <Header  addCartStatus={cartHandler}></Header >
+     <Meals meals={mealsArray}/>
+     {cartStatus&&<Cart onCart={cartHandler}></Cart>}
     </React.Fragment>
   );
 }
