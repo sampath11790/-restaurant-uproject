@@ -20,8 +20,35 @@ const CartContextProvider=(props)=>{
 
  }
 
-  const removeiteFromcartHandler=()=>{
+  const removeiteFromcartHandler=(id)=>{
+    console.log(id)
+   let removedList= items.map((each)=>{
+        
+      if(id===each.id ){
+        let temp=Number(each.quantity)
+        each.quantity=temp-1;
+        return each
+      }
+      return each
+    })
+    //console.log(a)
+      updateItem([...removedList])
     console.log('removeiteFromcartHandler')
+  }
+  const updateitemHandler=(id)=>{
+    let updatedList= items.map((each)=>{
+        
+      if(id===each.id){
+        let temp=Number(each.quantity)
+        each.quantity=temp+1;
+        return each
+      }
+      return each
+    })
+    //console.log(a)
+      updateItem([...updatedList])
+      console.log(updatedList)
+
   }
   // useEffect(()=>{
   //   cartContext.items.push(item)
@@ -31,12 +58,14 @@ const CartContextProvider=(props)=>{
         items:items,
         Quantity:0,
         addItem: additemtoCarthandler,
-        removeItem:removeiteFromcartHandler
+        removeItem:removeiteFromcartHandler,
+        updateItem:updateitemHandler
+
     }
    // console.log( 'rerendering',cartContext)
     return(
         <CartContext.Provider value={cartContext}>
-          {console.log("cartprovider rerendering")}
+          {/* {console.log("cartprovider rerendering")} */}
            {props.children}
         </CartContext.Provider>
     )

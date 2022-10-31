@@ -14,6 +14,9 @@ const Cart=(props)=>{
 
      //console.log(item.price)
 })
+const orderHandler=()=>{
+  console.log(ctx.items)
+}
   
  // console.log(ctx.items.lengtth)
 return(
@@ -22,12 +25,13 @@ return(
     <div >
        
        <div className={classes.cart}> 
+       <CartMenu></CartMenu>
        <h1>Amount</h1>
        <h1>{totalAmount}</h1>
-       <CartMenu></CartMenu>
+      
        <div className={classes.btn}>
        <Button  name='cancel' type='button' onClick={props.onCart}></Button>
-       <Button name='order' type='button' ></Button>
+       <Button name='order' type='button'  onClick={orderHandler}></Button>
        
        </div>
       </div>
