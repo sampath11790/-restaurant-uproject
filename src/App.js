@@ -1,8 +1,9 @@
 import React,{useState} from "react";
 import Header from "./Component/Layout/Header";
-
+import CartContextProvider from "./Context/CartContextProvider";
 import Meals from "./Component/Meals/Meals";
-import Cart from "./Component/Cart/Cart";
+
+ import Modal from './Component/modal/Modal'
 const mealsArray=[
     
   {id:1,name:'Suchi',discription:"Fineest fidh and veggies",price:22.99},
@@ -20,11 +21,11 @@ function App() {
 
   return (
     
-    <React.Fragment>
+    <CartContextProvider>
      <Header  addCartStatus={cartHandler}></Header >
      <Meals meals={mealsArray}/>
-     {cartStatus&&<Cart onCart={cartHandler}></Cart>}
-    </React.Fragment>
+     {cartStatus&&<Modal onCart={cartHandler}></Modal >}
+    </CartContextProvider>
   );
 }
 

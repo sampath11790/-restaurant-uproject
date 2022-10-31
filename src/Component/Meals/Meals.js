@@ -10,6 +10,7 @@ const Meals=(props)=>{
         <ul className={classes.UI}>
        {props.meals.map((item)=>
        <MealsItem
+       id={item.id}
        key={item.id}
        name={item.name}
        discription={item.discription}
