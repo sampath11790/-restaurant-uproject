@@ -47,9 +47,24 @@ const CartContextProvider=(props)=>{
     })
     //console.log(a)
       updateItem([...updatedList])
-      console.log(updatedList)
+      //console.log(updatedList)
 
   }
+  const clearCartHandler=()=>{
+    updateItem([])
+  }
+  const RemoveHandler=(uid)=>{
+    let updatedList=items.filter((item)=>{
+      if(item.id!==uid){
+        return item
+      }
+      return
+    })
+    updateItem([...updatedList])
+    //console.log(updatedList)
+    console.log('remove Handler')
+  }
+
   // useEffect(()=>{
   //   cartContext.items.push(item)
   // },[cartContext])
@@ -59,7 +74,9 @@ const CartContextProvider=(props)=>{
         Quantity:0,
         addItem: additemtoCarthandler,
         removeItem:removeiteFromcartHandler,
-        updateItem:updateitemHandler
+        updateItem:updateitemHandler,
+        clearCart:clearCartHandler,
+        removeList:RemoveHandler
 
     }
    // console.log( 'rerendering',cartContext)

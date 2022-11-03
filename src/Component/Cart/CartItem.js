@@ -23,6 +23,9 @@ const CartItem=(props)=>{
         console.log('am PlusHandler')
 
     }
+    const RemoveListHandler=()=>{
+     ctx.removeList(props.id)
+    }
 
     return(
    <div>
@@ -33,7 +36,7 @@ const CartItem=(props)=>{
         <div className={classes.btn}>
         <Button name='-' type='button' onClick={ MinusHandler}></Button>
         <Button name='+' type='button' onClick={ PlusHandler}></Button>
-        
+        <Button name='Remove' type='button' onClick={RemoveListHandler}></Button>
         </div>
     </li>
    </div>
