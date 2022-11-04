@@ -36,7 +36,7 @@ const CartItem=(props)=>{
         <div className={classes.btn}>
         <Button name='-' type='button' onClick={ MinusHandler}></Button>
         <Button name='+' type='button' onClick={ PlusHandler}></Button>
-        <Button name='Remove' type='button' onClick={RemoveListHandler}></Button>
+        <Button name='Remove' type='button' onClick={RemoveListHandler} className={classes.removebtn}></Button>
         </div>
     </li>
    </div>

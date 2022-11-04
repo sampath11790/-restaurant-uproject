@@ -31,7 +31,7 @@ const Form=(props)=>{
             }}
           ></Input>
           </div>
-          <Button name='+Add Item'  type='submit'></Button>
+          <Button name='+Add Item'  type='submit' className={classes.sbutton}></Button>
           
         </form>
         </div>

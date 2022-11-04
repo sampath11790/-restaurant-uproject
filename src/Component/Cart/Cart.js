@@ -12,7 +12,7 @@ const Cart=(props)=>{
   ctx.items.map((item)=>{
     
    let tempvalue=totalAmount+item.price*item.quantity;
-   totalAmount= Math.round(tempvalue * 100) / 100
+    return totalAmount= Math.round(tempvalue * 100) / 100
 
      //console.log(item.price)
 })
@@ -39,9 +39,9 @@ return(
        <h1>{totalAmount}</h1>
       
        <div className={classes.btn}>
-       <Button name='clearCart' type='button' onClick={clearHandler}></Button>
-       <Button  name='cancel' type='button' onClick={props.onCart}></Button>
-       <Button name='order' type='button'  onClick={orderHandler}></Button>
+       <Button name='clearCart' type='button' onClick={clearHandler} className={classes.clearbtn}></Button>
+       <Button  name='Cancel' type='button' onClick={props.onCart} className={classes.cancelbtn} ></Button>
+       <Button name='Place Order' type='button'  onClick={orderHandler} className={classes.orderbtn}></Button>
        
        </div>
       </div>

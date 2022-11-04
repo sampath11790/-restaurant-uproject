@@ -15,3 +15,7 @@
     font: inherit;
     padding-left: 0.5rem;
   }
+  .sbutton{
+    background-color: #33013c;
+    font-weight: bold;
+  }

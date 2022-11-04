@@ -10,10 +10,10 @@ const CartContextProvider=(props)=>{
     //updateItem([...items,item])
      let b=true
       items.map((a)=>{
-      if(a.id===item.id){
-      return b=false
+       if(a.id===item.id){
+           b=false
       }
-
+      return b
     })
     b===true? updateItem([...items,item]): console.log('This Item added in your Cart')
     
