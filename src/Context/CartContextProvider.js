@@ -5,22 +5,37 @@ import CartContext from "./CartContext";
 
 const CartContextProvider=(props)=>{
  const [items,updateItem]=useState([])
-  const additemtoCarthandler=(item)=>{
- 
-    //updateItem([...items,item])
-     let b=true
-      items.map((a)=>{
-       if(a.id===item.id){
-           b=false
-      }
-      return b
-    })
-    b===true? updateItem([...items,item]): console.log('This Item added in your Cart')
+  const additemtoCarthandler=(uitem)=>{
+    if(items.length<=0){
+      updateItem([...items,uitem])
+    }else{
+      let flag=false
+      let b= items.map((each)=>{
+       // console.log( uitem.quantity)
+      
+        
+         if(each.id===uitem.id ){
+          let temp=each.quantity*1
+          each.quantity=temp+uitem.quantity*1;
+          flag=true
+         
+        }
+       
+       return each
+         
+      
+      })
+      flag===true?updateItem([...b]):updateItem([...items,uitem])
+     
+    }
     
+  
+    //b===true? updateItem([...items,updatedList]): console.log('This Item added in your Cart')
+   // console.log(updatedList)
 
  }
 
-  const removeiteFromcartHandler=(id)=>{
+  const removeitemFromcartHandler=(id)=>{
     console.log(id)
    let removedList= items.map((each)=>{
         
@@ -72,11 +87,11 @@ const CartContextProvider=(props)=>{
     const cartContext={
         items:items,
         Quantity:0,
-        addItem: additemtoCarthandler,
-        removeItem:removeiteFromcartHandler,
-        updateItem:updateitemHandler,
-        clearCart:clearCartHandler,
-        removeList:RemoveHandler
+        addItem: additemtoCarthandler,  //add item list to cart
+        removeItem:removeitemFromcartHandler,//plus button 
+        updateItem:updateitemHandler,  //minus button
+        clearCart:clearCartHandler,  //clear cart
+        removeList:RemoveHandler     //removing item from the cart
 
     }
    // console.log( 'rerendering',cartContext)
