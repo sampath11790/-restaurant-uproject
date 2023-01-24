@@ -1,5 +1,4 @@
-
-.cart{
+.cart {
   position: fixed;
   top: 20vh;
   left: 5%;
@@ -9,24 +8,44 @@
   border-radius: 14px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
   z-index: 30;
-  
 }
-.btn{
+.btn {
   display: flex;
   /* justify-content: end; */
   right: 12%;
   left: 80%;
 }
-.orderbtn{
+.orderbtn {
   background-color: rgb(23, 139, 36);
   font-weight: bold;
 }
-.cancelbtn{
+.cancelbtn {
   background-color: rgb(46, 106, 235);
   font-weight: bold;
 }
 
-.clearbtn{
-  background-color:rgb(248, 7, 7) ;
+.clearbtn {
+  background-color: rgb(248, 7, 7);
   font-weight: bold;
+}
+@media screen and (max-width: 700px) {
+  .cart {
+    position: absolute;
+    top: 20vh;
+    left: 0%;
+    width: 100%;
+    background-color: white;
+    padding: 0.5rem;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    z-index: 30;
+    height: auto;
+  }
+  .btn {
+    display: flex;
+    /* justify-content: end; */
+    right: 12%;
+    left: 80%;
+    flex-direction: column;
+  }
 }

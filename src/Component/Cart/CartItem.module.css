@@ -1,10 +1,10 @@
 .item {
   display: flex;
-    padding: 3px;
-    margin: 1rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid #ccc;
-    margin-top: 0.25rem;
+  padding: 3px;
+  margin: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ccc;
+  margin-top: 0.25rem;
   font-weight: bold;
   color: #ad5502;
   font-size: 1.75rem;
@@ -12,13 +12,36 @@
 
   border-radius: 5px;
 }
-.btn{
-  
+.btn {
   display: flex;
-  
-
 }
-.removebtn{
+.removebtn {
   background-color: #ef3838;
   color: black;
+}
+
+@media screen and (max-width: 700px) {
+  .item {
+    display: flex;
+    padding: 1px;
+    margin: 0.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #ccc;
+    margin-top: 0.25rem;
+    font-weight: bold;
+    color: #ad5502;
+    font-size: 1.75rem;
+    list-style: none;
+
+    border-radius: 5px;
+  }
+  .btn {
+    display: flex;
+    flex-direction: column;
+  }
+  .removebtn {
+    background-color: #ef3838;
+    width: auto;
+    color: black;
+  }
 }
